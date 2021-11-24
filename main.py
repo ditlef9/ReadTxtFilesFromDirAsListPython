@@ -1,16 +1,14 @@
-# This is a sample Python script.
+###
+#
+# File: main.py
+# Version 1.0.0
+# Date 14:28 25.03.2021
+# Copyright (c) 2021 Ditlef
+# License: http://opensource.org/licenses/gpl-license.php GNU Public License
+#
+###
+from ReadFilesToList import ReadFilesToList
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+myList = ReadFilesToList()
+#for data in myList:
+print(myList)
