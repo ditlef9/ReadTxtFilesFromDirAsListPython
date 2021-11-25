@@ -10,5 +10,10 @@
 from ReadFilesToList import ReadFilesToList
 
 myList = ReadFilesToList()
-#for data in myList:
-print(myList)
+for data in myList:
+    print(myList[0])
+
+print(ReadFilesToList())
+
+for c in ReadFilesToList():
+    print(c)

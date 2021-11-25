@@ -8,24 +8,28 @@
 #
 ###
 import os
+import re
 
 
 class ReadFilesToList:
 
     # Initialize class -------------------------------- #
     def __init__(self):
-        filters_list = [] # Generate list
+        self.current = 0
+        self.high = 0
+
+        self.filenames_list = [] # Generate list of all txt files to read
+        self.filters_list = [] # Generate list of all keywords separated with |
 
         # Find all filters in "filters" directory
         for filename in os.listdir("filters"):
             with open(os.path.join("filters", filename), 'r') as f: # open in readonly mode
                 #print(filename)
-                filters_list.append(filename)
+                self.filenames_list.append(filename)
 
         # Read filters
-        filters_include_list = []
-        for filename in filters_list:
-            print(filename)
+        for filename in self.filenames_list:
+            #print(filename)
 
             # Read filter
             f = open('filters/' + filename)  # Open file on read mode
@@ -35,21 +39,29 @@ class ReadFilesToList:
             # Remove first line
             del data_list[0]
 
-            # Loop trough list and remove
+            # Loop trough list and remove double tabs
+            count = 0
+            for line in data_list:
+                data_list[count] = re.sub("[\t ]{2,}", "|", line) # Make separator |
 
-            # Append to existing filters list
-            filters_include_list.append(data_list)
+                # Append to existing filters list
+                self.filters_list.append(data_list[count])
 
+                count += 1
 
-        # Print all keywords
-        filters_include_length = len(filters_include_list)
+        # Count number of items in data_list and use it as high
+        self.high = len(self.filters_list)
 
-        print("Lenght=", filters_include_length);
-        #print("Filters=", filters_include)
-        for filter in filters_include_list:
-          print(filter)
+    # Call class from other class --------------------- #
+    def __iter__(self):
+        return self
 
-
+    # Next for a for loop over keywords --------------- #
+    def __next__(self): # Python 2: def next(self)
+        self.current += 1
+        if self.current < self.high:
+            return self.filters_list
+        raise StopIteration
 
     # Call class from other class --------------------- #
     def __call__(self):
