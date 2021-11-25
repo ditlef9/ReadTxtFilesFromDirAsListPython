@@ -9,11 +9,10 @@
 ###
 from ReadFilesToList import ReadFilesToList
 
-myList = ReadFilesToList()
-for data in myList:
-    print(myList[0])
+data = ReadFilesToList()
+print(data())
 
-print(ReadFilesToList())
+#print(ReadFilesToList())
 
-for c in ReadFilesToList():
-    print(c)
+#for c in ReadFilesToList():
+#    print(c)

@@ -43,6 +43,8 @@ class ReadFilesToList:
             count = 0
             for line in data_list:
                 data_list[count] = re.sub("[\t ]{2,}", "|", line) # Make separator |
+                data_list[count] = data_list[count].replace("\t", "|") # Make separator |
+
 
                 # Append to existing filters list
                 self.filters_list.append(data_list[count])
@@ -65,4 +67,4 @@ class ReadFilesToList:
 
     # Call class from other class --------------------- #
     def __call__(self):
-        return self.filters_list
+        return '\n'.join(self.filters_list)

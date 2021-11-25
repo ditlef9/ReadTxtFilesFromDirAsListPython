@@ -1,6 +1,5 @@
-Number 	Norwegian 	English
-1 	som 	as
-2 	jeg 	I
-3 	hans 	his
-4 	at 	that
-5 	han 	he
+Number 	    Boy     Girl
+2           Emil	Emma
+3           Noah	Ella
+4           Oliver	Maia
+5           Philip	Olivia

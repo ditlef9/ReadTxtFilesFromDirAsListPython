@@ -1,6 +1,6 @@
-Number 	Swedish 	English
-1 	som 	as
-2 	jag 	I
-3 	hans 	his
-4 	att 	that
-5 	han 	he
+Number 	Boy         Girl
+1       Noah        Alice
+2       William     Maja
+3       Hugo        Elsa
+4       Lucas       Astrid
+5       Liam        Wilma
